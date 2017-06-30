@@ -1,0 +1,89 @@
+$white: #fff;
+$black: #000;
+$alert-color: red;
+$warning-color: orange;
+$success-color: green;
+
+.edited {
+  background-color: rgba(255, 255, 0, 0.2) !important;
+  position: relative;
+  .reset, .save, .stick {
+    display: none;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    //top: -2.1rem;
+    left: 0;
+    border-radius: 50%;
+    background-color: $black !important;
+    cursor: pointer;
+    text-indent: 0;
+    text-align: center;
+    line-height: 2rem;
+    font-size: 1rem;
+  }
+  .reset {
+    i {
+      &::before { content: "R"; }
+      color: $alert-color !important;
+    }
+  }
+  .save {
+    i {
+      &::before { content: "S"; }
+      color: $success-color !important;
+    }
+  }
+  .stick {
+    i {
+      &::before { content: "P"; }
+      color: $warning-color !important;
+    }
+  }
+  &:hover {
+    &::-moz-selection { color: $white; }
+    &.hl-red::-moz-selection { background-color: $alert-color; }
+    &.hl-orange::-moz-selection { background-color: $warning-color; }
+    &.hl-green::-moz-selection { background-color: $success-color; }
+    .reset, .save, .stick {
+      display: block;
+      opacity: 0.7;
+      &:after {
+        content: "";
+        position: absolute;
+        top: 1.75rem;
+        left: 0.5rem;
+        width: 0;
+        height: 0;
+        border-left: 0.5rem solid transparent;
+        border-right: 0.5rem solid transparent;
+        border-top: 0.5rem solid $black;
+      }
+    }
+  }
+}
+
+#editable-input {
+  box-shadow: -1px -1px 2px #ccc inset, 3px 3px 2px 1px #999 inset !important;
+  border-radius: 3px;
+  background-color: #eee !important;
+  position: absolute;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  min-height: 5px;
+  //top: 0;
+  left: 0;
+  z-index : 2000;
+  padding: 2px 4px;//inherit;
+  margin: 0;
+  line-height: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  text-decoration: inherit;
+  text-align: inherit;
+  text-indent: inherit;
+  border: none;
+  resize: none;
+  overflow: hidden;
+}

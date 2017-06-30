@@ -1,0 +1,34 @@
+{
+  "name": "inpladitor",
+  "version": "0.1.0",
+  "description": "An in-place editor for meteor",
+  "main": "model.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahmost/inpladitor.git"
+  },
+  "author": "Mahmoud Mostafa <mah@moud.info>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mahmost/inpladitor/issues"
+  },
+  "homepage": "https://github.com/mahmost/inpladitor#readme",
+  "dependencies": {
+    "underscore": "^1.5.0",
+    "optimal-select": "=3.5.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.1",
+    "node-sass": "^4.5.3",
+    "postcss-cli": "^4.1.0"
+  },
+  "scripts": {
+    "build": "npm run build-clean && npm run build-sass && npm run build-autoprefix",
+    "build-sass": "node-sass --output-style expanded --source-map true style.scss -o css",
+    "build-autoprefix": "postcss --use autoprefixer --output css/style.css css/style.css",
+    "watch-sass": "npm run build-sass && npm run build-sass -- -w"
+  },
+  "files": [
+    "css"
+  ]
+}
