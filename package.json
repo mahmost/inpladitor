@@ -14,11 +14,28 @@
   },
   "homepage": "https://github.com/mahmost/inpladitor#readme",
   "dependencies": {
-    "underscore": "^1.5.0",
-    "optimal-select": "=3.5.0"
+    "@babel/runtime": "^7.0.0",
+    "loglevel": "^1.6.1",
+    "optimal-select": "=3.5.0",
+    "underscore": "^1.5.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/cli": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/register": "^7.0.0",
     "autoprefixer": "^7.1.1",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-import-resolver-babel-module": "^4.0.0",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-chai-friendly": "^0.4.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-mocha": "^5.2.0",
+    "mocha": "^5.2.0",
     "node-sass": "^4.5.3",
     "postcss-cli": "^4.1.0"
   },
@@ -26,7 +43,8 @@
     "build": "npm run build-clean && npm run build-sass && npm run build-autoprefix",
     "build-sass": "node-sass --output-style expanded --source-map true style.scss -o css",
     "build-autoprefix": "postcss --use autoprefixer --output css/style.css css/style.css",
-    "watch-sass": "npm run build-sass && npm run build-sass -- -w"
+    "watch-sass": "npm run build-sass && npm run build-sass -- -w",
+    "test": "mocha --require @babel/polyfill --require @babel/register --recursive"
   },
   "files": [
     "css"

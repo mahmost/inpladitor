@@ -10,14 +10,13 @@ Npm.depends({
 });
 
 Package.onUse(function (api) {
-  api.versionsFrom('1.2');
+  api.versionsFrom('1.4.3.2');
 
   api.use('modules');
 
   api.mainModule('handler.js', 'client');
-
   api.mainModule('model.js', 'server');
-  api.addFiles('model.js', 'client');
+
   api.addFiles('css/style.css', 'client');
 
 });
