@@ -2,7 +2,7 @@ Package.describe({
   name: 'mahmost:inpladitor',
   git: 'https://github.com/mahmost/inpladitor.git',
   summary: 'An in-place editor for meteor',
-  version: '0.1.0',
+  version: '0.2.0',
 });
 
 Npm.depends({
