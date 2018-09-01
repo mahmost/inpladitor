@@ -1,6 +1,6 @@
 {
   "name": "inpladitor",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "An in-place editor for meteor",
   "main": "dist/index.js",
   "repository": {
