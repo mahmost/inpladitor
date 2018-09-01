@@ -40,7 +40,7 @@ function realShape(range) {
 
 
 function elementSelector(element) {
-  return OptimalSelect.select(element, {
+  return OptimalSelect(element, {
     ignore: {
       class(className) { return /(?=(\s|))(sortable|edited|save|stick|reset|hl-red|hl-orange|hl-green)(?=(\s|$))/.test(className); },
       attribute(name/* , value, defaultPredicate */) { return /^style$/.test(name); },
