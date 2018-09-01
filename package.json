@@ -1,8 +1,8 @@
 {
   "name": "inpladitor",
-  "version": "0.2.0",
+  "version": "0.2.5",
   "description": "An in-place editor for meteor",
-  "main": "model.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mahmost/inpladitor.git"
@@ -40,13 +40,17 @@
     "postcss-cli": "^4.1.0"
   },
   "scripts": {
-    "build": "npm run build-clean && npm run build-sass && npm run build-autoprefix",
+    "build": "babel src -d dist && npm run build-sass && npm run build-autoprefix",
     "build-sass": "node-sass --output-style expanded --source-map true style.scss -o css",
     "build-autoprefix": "postcss --use autoprefixer --output css/style.css css/style.css",
     "watch-sass": "npm run build-sass && npm run build-sass -- -w",
-    "test": "mocha --require @babel/polyfill --require @babel/register --recursive"
+    "test": "mocha --require @babel/polyfill --require @babel/register --recursive",
+    "prepare": "npm run build"
   },
   "files": [
-    "css"
+    "css",
+    "dist/index.js",
+    "dist/model.js",
+    "dist/handler.js"
   ]
 }

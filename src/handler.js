@@ -772,5 +772,4 @@ Inpladitor.handler = function handler(event/* , template */) {
   });
 };
 
-
-module.exports = Inpladitor;
+export default Inpladitor;
