@@ -2,7 +2,7 @@ Package.describe({
   name: 'mahmost:inpladitor',
   git: 'https://github.com/mahmost/inpladitor.git',
   summary: 'An in-place editor for meteor',
-  version: '0.2.0',
+  version: '0.2.5',
 });
 
 Npm.depends({
@@ -15,8 +15,8 @@ Package.onUse((api) => {
 
   api.use('modules');
 
-  api.mainModule('handler.js', 'client');
-  api.mainModule('model.js', 'server');
+  api.mainModule('dist/handler.js', 'client');
+  api.mainModule('dist/model.js', 'server');
 
   api.addFiles('css/style.css', 'client');
 });
